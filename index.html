@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sample Bakery - 街の焼き立てパン屋さん</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Noto+Sans+JP:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <canvas id="steam-canvas"></canvas>
+
+    <header class="header">
+      <div class="logo">
+        <span class="logo-en">Sample Bakery</span>
+        <span class="logo-ja">〜街の焼き立てパン屋さん〜</span>
+      </div>
+      <nav class="nav-links">
+        <a href="#about">お店のこと</a>
+        <a href="#featured">おすすめパン</a>
+        <a href="#menu">メニュー</a>
+        <a href="#interior">店の様子</a>
+        <a href="#info">お店の場所</a>
+        <a href="#recruit">仲間募集</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="hero-bg">
+        <video
+          class="hero-video"
+          autoplay
+          muted
+          loop
+          playsinline
+          src="videos/hero.mp4"
+          poster="images/image1.jpg"
+        ></video>
+      </div>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <p class="hero-sub">Freshly Baked Every Day</p>
+        <h1>まいにちの食卓に、<br />焼き立ての笑顔を。</h1>
+        <p class="hero-lead">
+          Sample
+          Bakeryへようこそ！香ばしいにおいに包まれた店内で、おじいちゃんもお子様もみんなが笑顔になれる、お気に入りのパンがきっと見つかります。
+        </p>
+        <a href="#info" class="btn-discover">本日の焼き立て時間はこちら</a>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container about-grid">
+        <div class="about-text">
+          <p class="section-sub">ABOUT US</p>
+          <h2>みんなの「おいしい！」の声を<br />励みに、まいにち手作り。</h2>
+          <p class="text-block">
+            特別な日のお食事はもちろん、学校帰りのおやつ、毎朝の食卓。どんなときでも気軽にふらっと立ち寄れる、地域のみなさまに愛される「街のパン屋さん」を目指しています。地元の新鮮な素材を使い、毎日心を込めて焼いています。
+          </p>
+        </div>
+        <div class="about-img-box">
+          <img src="images/image2.jpg" alt="パン作りの風景" />
+        </div>
+      </div>
+    </section>
+
+    <section id="featured" class="featured">
+      <div class="container">
+        <div class="section-title text-center">
+          <p class="section-sub">RECOMMENDED</p>
+          <h2>当店の一押しパン！</h2>
+        </div>
+        <div class="featured-grid">
+          <div class="featured-item animate-up">
+            <div class="img-wrap">
+              <img src="images/image3.jpg" alt="名物クロワッサン" />
+            </div>
+            <div class="item-meta">
+              <span class="item-num">01</span>
+              <h3>まいにちのクロワッサン</h3>
+              <p>
+                外はサクサク、中はふんわり。バターがほんのり優しく香る、飽きのこない当店の人気者です。
+              </p>
+            </div>
+          </div>
+          <div class="featured-item animate-up" style="animation-delay: 0.2s">
+            <div class="img-wrap">
+              <img src="images/image4.jpg" alt="香ばしい田舎パン" />
+            </div>
+            <div class="item-meta">
+              <span class="item-num">02</span>
+              <h3>おくりものバゲット</h3>
+              <p>
+                外側はパリッと香ばしく、中はもっちり。シチューやスープ、毎日のごはんのお供にぴったりです。
+              </p>
+            </div>
+          </div>
+          <div class="featured-item animate-up" style="animation-delay: 0.4s">
+            <div class="img-wrap">
+              <img src="images/image5.jpg" alt="季節のおやつパン" />
+            </div>
+            <div class="item-meta">
+              <span class="item-num">03</span>
+              <h3>ごろっとおやつデニッシュ</h3>
+              <p>
+                季節のおいしいフルーツを贅沢に乗せました。カスタードクリームとの相性もバツグンです！
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="menu" class="menu-board">
+      <div class="container">
+        <div class="menu-board-inner">
+          <div class="menu-board-header text-center">
+            <p class="board-sub">TODAY'S BAKERY MENU</p>
+            <h2 class="board-title" style="color: #fffdf9 !important">
+              本日のメニューボード
+            </h2>
+            <span class="board-decor">🥖 🍞 🥐</span>
+          </div>
+
+          <div class="menu-board-grid">
+            <div class="menu-column">
+              <div class="menu-category">おやつ・菓子パン</div>
+              <ul class="menu-list">
+                <li>
+                  <div class="menu-title-row">
+                    <h5>サクサク クロワッサン</h5>
+                    <span class="menu-line"></span
+                    ><span class="menu-price">¥320</span>
+                  </div>
+                  <p class="menu-desc">みんな大好き！バター香る定番パン</p>
+                </li>
+                <li>
+                  <div class="menu-title-row">
+                    <h5>とろ〜り チョコパン</h5>
+                    <span class="menu-line"></span
+                    ><span class="menu-price">¥280</span>
+                  </div>
+                  <p class="menu-desc">
+                    マイルドなミルクチョコがたっぷり入っています
+                  </p>
+                </li>
+                <li>
+                  <div class="menu-title-row">
+                    <h5>おばあちゃんのあんぱん</h5>
+                    <span class="menu-line"></span
+                    ><span class="menu-price">¥240</span>
+                  </div>
+                  <p class="menu-desc">
+                    北海道あずきを贅沢に使った、優しい甘さの粒あん
+                  </p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="menu-column">
+              <div class="menu-category">まいにちの食卓・お食事パン</div>
+              <ul class="menu-list">
+                <li>
+                  <div class="menu-title-row">
+                    <h5>香ばし バゲット</h5>
+                    <span class="menu-line"></span
+                    ><span class="menu-price">¥340</span>
+                  </div>
+                  <p class="menu-desc">
+                    サンドイッチにしても美味しい、シンプルな一本
+                  </p>
+                </li>
+                <li>
+                  <div class="menu-title-row">
+                    <h5>ふんわり 食パン（1斤）</h5>
+                    <span class="menu-line"></span
+                    ><span class="menu-price">¥380</span>
+                  </div>
+                  <p class="menu-desc">
+                    トーストすると、耳までサクサクでもちもちに！
+                  </p>
+                </li>
+                <li>
+                  <div class="menu-title-row">
+                    <h5>ごろごろ チーズクッペ</h5>
+                    <span class="menu-line"></span
+                    ><span class="menu-price">¥300</span>
+                  </div>
+                  <p class="menu-desc">
+                    角切りチーズが中にこれでもかと入っています
+                  </p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="menu-board-footer text-center">
+            <p>
+              ※この他にも、焼き立ての総菜パンやサンドイッチをたくさんご用意して待っています！
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="interior" class="interior">
+      <div class="container-fluid">
+        <div class="interior-wrap">
+          <div class="interior-img">
+            <img src="images/image6.jpg" alt="あたたかくてアットホームな店内" />
+          </div>
+          <div class="interior-text-card">
+            <p class="section-sub">THE SHOP</p>
+            <h2>小麦のいい香りと、<br />のんびりした時間。</h2>
+            <p>
+              木を基調としたぬくもりある店内には、早朝から焼き上がったパンがずらりと並びます。トレイとトングを持って、「今日はどれにしようかな？」と迷う時間も楽しんでいただけたら嬉しいです。お店の奥の工房で職人がせっせとパンを焼く姿ものぞけますよ。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="info" class="shop-info">
+      <div class="container">
+        <div class="section-title text-center">
+          <p class="section-sub">INFORMATION</p>
+          <h2>お店の場所・焼き立て時間</h2>
+        </div>
+
+        <div class="info-grid">
+          <div class="info-details-wrap">
+            <div class="info-block">
+              <h3>
+                Sample Bakery <span class="h3-sub">サンプルベーカリー</span>
+              </h3>
+              <table class="info-table">
+                <tr>
+                  <th>住所</th>
+                  <td>〒000-0000 東京都〇〇区ひだまり町 1-2-3</td>
+                </tr>
+                <tr>
+                  <th>お電話</th>
+                  <td>03-XXXX-XXXX</td>
+                </tr>
+                <tr>
+                  <th>営業時間</th>
+                  <td>08:00 〜 18:00（※売り切れ次第お店が閉まります）</td>
+                </tr>
+                <tr>
+                  <th>お休み</th>
+                  <td>毎週月曜日・火曜日</td>
+                </tr>
+              </table>
+            </div>
+
+            <div class="info-block schedule-block">
+              <h4 class="schedule-title">⏱ 焼き立てパンの提供目安</h4>
+              <ul class="schedule-timeline">
+                <li>
+                  <span class="time">08:00</span>
+                  <span class="menu-name"
+                    >開店！あつあつクロワッサン、朝食用の食パンなど</span
+                  >
+                </li>
+                <li>
+                  <span class="time">11:30</span>
+                  <span class="menu-name"
+                    >お昼ごはんに！お惣菜パン、焼き立てバゲットなど</span
+                  >
+                </li>
+                <li>
+                  <span class="time">15:00</span>
+                  <span class="menu-name"
+                    >３時のおやつに！あま〜い菓子パンやデニッシュなど</span
+                  >
+                </li>
+              </ul>
+              <p class="schedule-note">
+                ※季節や天気によって、焼き上がる時間がすこし変わることがあります。
+              </p>
+            </div>
+          </div>
+
+          <div class="info-map-wrap">
+            <div class="map-container">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3240.8280303808788!2d139.7525793!3d35.6894875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x60188c0d02d993d7%3A0x217e29000ece20a!2z5p2x5Lqs6aeF!5e0!3m2!1sja!2sjp!4v1700000000000!5m2!1sja!2sjp"
+                width="100%"
+                height="100%"
+                style="border: 0"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+              >
+              </iframe>
+            </div>
+            <p class="map-caption">
+              〇〇線「ひだまり駅」から歩いて 4分 / 駐車場も3台あります！
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="recruit" class="recruit">
+      <div class="container recruit-inner">
+        <div class="recruit-grid">
+          <div class="recruit-img-box">
+            <img src="images/image7.jpg" alt="笑顔で働くパン屋の仲間たち" />
+          </div>
+          <div class="recruit-content">
+            <p class="section-sub">RECRUIT</p>
+            <h2>パンが好きな仲間、大募集！</h2>
+            <p class="recruit-lead">
+              Sample
+              Bakeryでは、いっしょにお店を盛り上げてくれるスタッフを募集しています。
+            </p>
+
+            <div class="recruit-conditions">
+              <div class="condition-item">
+                <span class="condition-label">時給</span>
+                <span class="condition-value">1,150円 〜 （早朝手当あり）</span>
+              </div>
+              <div class="condition-item">
+                <span class="condition-label">時間</span>
+                <span class="condition-value"
+                  >06:00 〜 19:00（週2日・1日4h〜OK！）</span
+                >
+              </div>
+            </div>
+
+            <div class="job-tags">
+              <span class="tag">パンの製造スタッフ（未経験OK）</span>
+              <span class="tag">販売・レジスタッフ（主婦・学生歓迎）</span>
+            </div>
+
+            <p class="text-block">
+              「パンのにおいが好き」「接客が好き」そんなきっかけで大丈夫。先輩がイチから優しく教えるので安心してくださいね。スタッフ割引でおいしいパンも食べられますよ！まずはお気軽にお電話ください。
+            </p>
+            <a href="tel:03-XXXX-XXXX" class="btn-recruit-cta"
+              >お電話で問い合わせる（採用担当まで）</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container footer-flex">
+        <div class="footer-brand">
+          <h3>Sample Bakery</h3>
+          <p>〜まいにちの食卓に、焼き立ての笑顔を〜</p>
+        </div>
+        <p class="footer-copy">© 2026 Sample Bakery. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

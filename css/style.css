@@ -1,0 +1,685 @@
+/* ==========================================================================
+   Base Design & Concept Colors (Town Bakery Concept - Casual & Warm)
+   ========================================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: #fffdf9; /* 温かみのある優しいクリーム白 */
+  color: #4a3629; /* 柔らかいビターブラウン */
+  line-height: 1.8;
+  position: relative;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* 強調版：蒸気アニメーションキャンバスの固定配置 */
+#steam-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* 最背面 */
+  pointer-events: none; /* コンテンツ選択やクリックの邪魔をしない */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.container-fluid {
+  width: 100%;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.section-title {
+  margin-bottom: 50px;
+}
+.text-center {
+  text-align: center;
+}
+
+.section-sub {
+  font-family: "Fredoka One", sans-serif;
+  color: #d97736;
+  font-weight: 400;
+  font-size: 0.95rem;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  line-height: 1.5;
+  color: #4a3629;
+}
+
+/* ==========================================================================
+   Header Navbar
+   ========================================================================== */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 5%;
+  background: rgba(255, 253, 249, 0.9);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-bottom: 2px dashed #eedcc5;
+  z-index: 100;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+}
+.logo-en {
+  font-family: "Fredoka One", sans-serif;
+  font-size: 1.5rem;
+  color: #6b4a32;
+}
+.logo-ja {
+  font-size: 0.7rem;
+  color: #d97736;
+  font-weight: 500;
+  margin-top: -2px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 24px;
+}
+.nav-links a {
+  text-decoration: none;
+  color: #6b4a32;
+  font-size: 0.9rem;
+  font-weight: 700;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: #d97736;
+}
+
+/* ==========================================================================
+   Hero Section (動画背景スタイル)
+   ========================================================================== */
+.hero {
+  position: relative;
+  height: 85vh;
+  display: flex;
+  align-items: center;
+  background: #6b4a32;
+  overflow: hidden;
+}
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(107, 74, 50, 0.45);
+  z-index: 2;
+}
+.hero-content {
+  position: relative;
+  z-index: 3;
+  color: #fffdf9;
+  max-width: 650px;
+  padding-left: 8%;
+}
+.hero-sub {
+  font-family: "Fredoka One", sans-serif;
+  color: #f7d5a3;
+  font-size: 1.1rem;
+  margin-bottom: 12px;
+}
+.hero-content h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1.4;
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+.hero-lead {
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: #fffdf9;
+  margin-bottom: 35px;
+}
+.btn-discover {
+  display: inline-block;
+  padding: 14px 35px;
+  background-color: #d97736;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border-radius: 30px;
+  box-shadow: 0 4px 15px rgba(217, 119, 54, 0.3);
+  transition: all 0.3s;
+}
+.btn-discover:hover {
+  background-color: #b85f24;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   About Section
+   ========================================================================== */
+.about {
+  padding: 100px 0;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.about-text h2 {
+  margin-bottom: 24px;
+}
+.text-block {
+  color: #5c473a;
+  font-size: 0.95rem;
+  line-height: 1.9;
+}
+.about-img-box img {
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(107, 74, 50, 0.08);
+}
+
+/* ==========================================================================
+   Featured Section (おすすめパン)
+   ========================================================================== */
+.featured {
+  padding: 100px 0;
+  /* 強調版調整：背景色を半透明にして、背後の蒸気アニメーションを綺麗に透けさせます */
+  background: rgba(251, 245, 236, 0.4);
+}
+.featured-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+.featured-item {
+  background: #fffdf9;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(107, 74, 50, 0.04);
+  transition: transform 0.3s ease;
+}
+.featured-item:hover {
+  transform: translateY(-6px);
+}
+.featured-item .img-wrap {
+  overflow: hidden;
+  height: 240px;
+}
+.featured-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.item-meta {
+  padding: 24px;
+  position: relative;
+}
+.item-num {
+  font-family: "Fredoka One", sans-serif;
+  font-size: 2rem;
+  color: #f3dfc6;
+  position: absolute;
+  right: 24px;
+  top: 15px;
+}
+.item-meta h3 {
+  font-size: 1.15rem;
+  color: #4a3629;
+  margin-bottom: 10px;
+  font-weight: 700;
+}
+.item-meta p {
+  font-size: 0.85rem;
+  color: #6e594c;
+  line-height: 1.7;
+}
+
+/* ==========================================================================
+   Menu Board Section
+   ========================================================================== */
+.menu-board {
+  padding: 100px 0;
+}
+.menu-board-inner {
+  background: #4a3629;
+  color: #fffdf9;
+  padding: 50px 40px;
+  border-radius: 20px;
+  border: 4px solid #eedcc5;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+}
+.board-sub {
+  font-family: "Fredoka One", sans-serif;
+  color: #f7d5a3;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+.board-decor {
+  display: block;
+  font-size: 1.2rem;
+  margin: 10px 0 40px 0;
+}
+.menu-board-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.menu-category {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #f7d5a3;
+  border-bottom: 2px dashed rgba(247, 213, 163, 0.3);
+  padding-bottom: 8px;
+  margin-bottom: 24px;
+}
+.menu-list {
+  list-style: none;
+}
+.menu-list li {
+  margin-bottom: 24px;
+}
+.menu-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.menu-list h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #fffdf9;
+}
+.menu-line {
+  flex-grow: 1;
+  border-bottom: 1px dotted rgba(255, 255, 255, 0.2);
+  margin: 0 10px;
+}
+.menu-price {
+  font-weight: 700;
+  color: #f7d5a3;
+}
+.menu-desc {
+  font-size: 0.8rem;
+  color: #d1c4b9;
+  margin-top: 2px;
+}
+.menu-board-footer {
+  margin-top: 40px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+  font-size: 0.85rem;
+  color: #d1c4b9;
+}
+
+/* ==========================================================================
+   Interior Section
+   ========================================================================== */
+.interior {
+  padding: 40px 0;
+}
+.interior-wrap {
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+.interior-img {
+  width: 60%;
+  height: 480px;
+}
+.interior-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0 16px 16px 0;
+}
+.interior-text-card {
+  width: 45%;
+  position: absolute;
+  right: 5%;
+  background: #fffdf9;
+  padding: 45px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(107, 74, 50, 0.06);
+  border: 2px solid #f3dfc6;
+}
+.interior-text-card h2 {
+  margin-bottom: 16px;
+}
+.interior-text-card p {
+  font-size: 0.9rem;
+  color: #5c473a;
+}
+
+/* ==========================================================================
+   Shop Info & Access Map Section
+   ========================================================================== */
+.shop-info {
+  padding: 100px 0;
+  /* 強調版調整：背景色を半透明にして、背後の蒸気アニメーションを綺麗に透けさせます */
+  background-color: rgba(251, 245, 236, 0.4);
+}
+.info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+.info-block {
+  background: #fffdf9;
+  padding: 30px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.01);
+}
+.info-block h3 {
+  font-size: 1.3rem;
+  color: #4a3629;
+}
+.info-block h3 .h3-sub {
+  font-size: 0.75rem;
+  color: #d97736;
+  display: block;
+  margin-top: 2px;
+}
+.info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+.info-table th,
+.info-table td {
+  padding: 10px 0;
+  border-bottom: 1px solid #f1eae1;
+  font-size: 0.85rem;
+}
+.info-table th {
+  text-align: left;
+  color: #8c7b6e;
+  width: 100px;
+}
+.info-table td {
+  color: #4a3629;
+}
+
+.schedule-block {
+  margin-bottom: 0;
+}
+.schedule-title {
+  font-size: 1.1rem;
+  color: #4a3629;
+  margin-bottom: 16px;
+}
+.schedule-timeline {
+  list-style: none;
+  position: relative;
+  padding-left: 15px;
+}
+.schedule-timeline::before {
+  content: "";
+  position: absolute;
+  left: 3px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: #f3dfc6;
+}
+.schedule-timeline li {
+  position: relative;
+  margin-bottom: 15px;
+}
+.schedule-timeline li::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #d97736;
+}
+.schedule-timeline .time {
+  font-weight: 700;
+  color: #d97736;
+  margin-right: 10px;
+}
+.schedule-timeline .menu-name {
+  font-size: 0.85rem;
+  color: #4a3629;
+}
+.schedule-note {
+  font-size: 0.75rem;
+  color: #8c7b6e;
+  margin-top: 10px;
+}
+
+.info-map-wrap {
+  display: flex;
+  flex-direction: column;
+}
+.map-container {
+  width: 100%;
+  flex-grow: 1;
+  min-height: 350px;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 4px solid #fffdf9;
+  box-shadow: 0 10px 25px rgba(107, 74, 50, 0.05);
+}
+.map-caption {
+  font-size: 0.8rem;
+  color: #6e594c;
+  margin-top: 10px;
+  text-align: right;
+}
+
+/* ==========================================================================
+   Recruit Section
+   ========================================================================== */
+.recruit {
+  padding: 100px 0;
+}
+.recruit-grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 50px;
+  align-items: center;
+}
+.recruit-img-box img {
+  border-radius: 16px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.03);
+}
+.recruit-content h2 {
+  margin-bottom: 15px;
+}
+.recruit-lead {
+  font-size: 1rem;
+  color: #d97736;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+.recruit-conditions {
+  background: #fbf5ec;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  border-left: 4px solid #6b4a32;
+}
+.condition-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+}
+.condition-item:last-child {
+  margin-bottom: 0;
+}
+.condition-label {
+  font-weight: 700;
+  color: #fffdf9;
+  background-color: #d97736;
+  font-size: 0.75rem;
+  padding: 2px 10px;
+  border-radius: 4px;
+  min-width: 50px;
+  text-align: center;
+  margin-right: 15px;
+}
+.condition-value {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #4a3629;
+}
+.job-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 15px;
+  margin-bottom: 20px;
+}
+.job-tags .tag {
+  background: #fbf5ec;
+  color: #6b4a32;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border-radius: 20px;
+}
+.btn-recruit-cta {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 30px;
+  background: #6b4a32;
+  color: #fffdf9;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border-radius: 30px;
+  transition: all 0.3s;
+}
+.btn-recruit-cta:hover {
+  background: #4a3629;
+  transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   Footer Style
+   ========================================================================== */
+.footer {
+  padding: 50px 20px;
+  background: #4a3629;
+  color: #d1c4b9;
+  font-size: 0.85rem;
+}
+.footer-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer-brand h3 {
+  font-family: "Fredoka One", sans-serif;
+  color: #fffdf9;
+  font-size: 1.4rem;
+}
+.footer-brand p {
+  font-size: 0.75rem;
+  color: #f7d5a3;
+  margin-top: 2px;
+}
+.footer-copy {
+  color: #a39285;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 960px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+  .about-grid,
+  .menu-board-grid,
+  .info-grid,
+  .recruit-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .featured-grid {
+    grid-template-columns: 1fr;
+  }
+  .interior-wrap {
+    flex-direction: column;
+  }
+  .interior-img,
+  .interior-text-card {
+    width: 100%;
+    position: static;
+  }
+  .interior-text-card {
+    padding: 30px 20px;
+    border-radius: 0;
+    border: none;
+    border-top: 4px solid #f3dfc6;
+  }
+  .map-container {
+    min-height: 280px;
+  }
+}
+
+@media (max-width: 650px) {
+  .header {
+    padding: 15px 20px;
+  }
+  .nav-links {
+    display: none;
+  }
+  .hero-content {
+    padding: 0 20px;
+  }
+  .hero-content h1 {
+    font-size: 1.8rem;
+  }
+  .menu-board-inner {
+    padding: 30px 16px;
+  }
+  .footer-flex {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+}
