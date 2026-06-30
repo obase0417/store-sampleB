@@ -623,9 +623,27 @@ h2 {
 }
 
 /* ==========================================================================
-   Responsive
+   Responsive（ヘッダー文字縮小＆スマホ全表示版）
    ========================================================================== */
 @media (max-width: 960px) {
+  /* 1. タブレットサイズ：ヘッダーの文字と余白を少し小さく */
+  .header {
+    padding: 15px 3% !important; /* JSの書き換えに負けないよう !important を付与 */
+  }
+  .logo-en {
+    font-size: 1.3rem;
+  }
+  .logo-ja {
+    font-size: 0.65rem;
+  }
+  .nav-links {
+    gap: 16px; /* ボタン同士の間隔を少し狭める */
+  }
+  .nav-links a {
+    font-size: 0.85rem;
+  }
+
+  /* その他の既存スタイル */
   h2 {
     font-size: 1.6rem;
   }
@@ -661,13 +679,54 @@ h2 {
   }
 }
 
-@media (max-width: 650px) {
+/* 2. 小さめのタブレットサイズ（画面幅768px以下）での微調整 */
+@media (max-width: 768px) {
   .header {
-    padding: 15px 20px;
+    padding: 12px 2% !important;
+  }
+  .logo-en {
+    font-size: 1.15rem;
   }
   .nav-links {
-    display: none;
+    gap: 10px;
   }
+  .nav-links a {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 650px) {
+  /* 3. スマホサイズ：ボタンをすべて表示するため、ロゴとナビを上下2行に綺麗に配置 */
+  .header {
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 10px !important;
+  }
+  .logo {
+    align-items: center; /* ロゴのテキストを中央寄せに */
+  }
+  .logo-en {
+    font-size: 1.2rem;
+  }
+  .logo-ja {
+    font-size: 0.65rem;
+    margin-top: 0;
+  }
+
+  /* display: none を解除してすべてのボタンを常時表示 */
+  .nav-links {
+    display: flex !important;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap; /* 万が一画面が極端に狭くても綺麗に折り返す保険 */
+    width: 100%;
+  }
+  .nav-links a {
+    font-size: 0.75rem;
+    padding: 2px 4px;
+  }
+
+  /* その他の既存スタイル */
   .hero-content {
     padding: 0 20px;
   }
@@ -681,5 +740,27 @@ h2 {
     flex-direction: column;
     gap: 20px;
     text-align: center;
+  }
+}
+
+/* 4. 画面幅が非常に狭い格安スマホ・旧型スマホ（画面幅375px以下）向けの最終防衛ライン */
+@media (max-width: 375px) {
+  .header {
+    gap: 6px;
+    padding: 8px 4px !important;
+  }
+  .logo-en {
+    font-size: 1.05rem;
+  }
+  .logo-ja {
+    font-size: 0.6rem;
+  }
+  .nav-links {
+    gap: 4px; /* ボタン同士の隙間をさらにタイトに */
+  }
+  .nav-links a {
+    font-size: 0.68rem;
+    padding: 2px 3px;
+    letter-spacing: -0.03em; /* 文字間隔をわずかに詰め、1行への収まりを極限まで高める */
   }
 }
